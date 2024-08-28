@@ -19,7 +19,7 @@ macro_rules! wrap_node {
     ) => {
         $(#[$attrs])*
         $vis struct $name {
-            pub(crate) inner: Arc<$inner>,
+            pub inner: Arc<$inner>,
         }
 
         impl $crate::private::Sealed for $name {}
@@ -145,7 +145,7 @@ pub(crate) struct KeyInner {
     /// in a TOML document.
     ///
     /// # Example
-    ///  
+    ///
     /// In the following both `table` and `inner` appear multiple times
     /// despite being the same key in the DOM.
     ///
@@ -356,9 +356,9 @@ impl ArrayKind {
 }
 
 #[derive(Debug)]
-pub(crate) struct BoolInner {
+pub struct BoolInner {
     pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+    pub syntax: Option<SyntaxElement>,
     pub(crate) value: OnceCell<bool>,
 }
 
@@ -388,9 +388,9 @@ impl Bool {
 }
 
 #[derive(Debug)]
-pub(crate) struct StrInner {
+pub struct StrInner {
     pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+    pub syntax: Option<SyntaxElement>,
     pub(crate) repr: StrRepr,
     pub(crate) value: OnceCell<String>,
 }
@@ -756,9 +756,9 @@ impl core::fmt::Display for DateTimeValue {
 }
 
 #[derive(Debug)]
-pub(crate) struct InvalidInner {
-    pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+pub struct InvalidInner {
+    pub errors: Shared<Vec<Error>>,
+    pub syntax: Option<SyntaxElement>,
 }
 
 wrap_node! {
