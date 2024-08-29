@@ -55,9 +55,9 @@ macro_rules! wrap_node {
 }
 
 #[derive(Debug)]
-pub(crate) struct TableInner {
+pub struct TableInner {
     pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+    pub syntax: Option<SyntaxElement>,
     pub(crate) header: bool,
     pub(crate) kind: TableKind,
     pub(crate) entries: Shared<Entries>,
