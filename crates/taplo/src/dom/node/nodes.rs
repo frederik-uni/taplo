@@ -312,7 +312,7 @@ pub(crate) struct ArrayInner {
 
 wrap_node! {
     #[derive(Debug, Clone)]
-    pub struct Array { inner: ArrayInner }
+    pub struct Array { pub inner: ArrayInner }
 }
 
 impl Array {
