@@ -303,7 +303,7 @@ impl std::hash::Hash for Key {
 }
 
 #[derive(Debug)]
-pub(crate) struct ArrayInner {
+pub struct ArrayInner {
     pub(crate) errors: Shared<Vec<Error>>,
     pub syntax: Option<SyntaxElement>,
     pub(crate) kind: ArrayKind,
