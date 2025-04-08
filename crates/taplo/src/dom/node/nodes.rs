@@ -137,7 +137,7 @@ pub enum TableKind {
 #[derive(Debug)]
 pub(crate) struct KeyInner {
     pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+    pub syntax: Option<SyntaxElement>,
     pub(crate) is_valid: bool,
     pub(crate) value: OnceCell<String>,
 
@@ -482,7 +482,7 @@ pub enum StrRepr {
 #[derive(Debug)]
 pub(crate) struct IntegerInner {
     pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+    pub syntax: Option<SyntaxElement>,
     pub(crate) repr: IntegerRepr,
     pub(crate) value: OnceCell<IntegerValue>,
 }
@@ -593,7 +593,7 @@ impl core::fmt::Display for IntegerValue {
 #[derive(Debug)]
 pub(crate) struct FloatInner {
     pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+    pub syntax: Option<SyntaxElement>,
     pub(crate) value: OnceCell<f64>,
 }
 
@@ -627,7 +627,7 @@ impl Float {
 #[derive(Debug)]
 pub(crate) struct DateTimeInner {
     pub(crate) errors: Shared<Vec<Error>>,
-    pub(crate) syntax: Option<SyntaxElement>,
+    pub syntax: Option<SyntaxElement>,
     pub(crate) value: OnceCell<DateTimeValue>,
 }
 
