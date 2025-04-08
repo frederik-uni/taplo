@@ -135,7 +135,7 @@ pub enum TableKind {
 }
 
 #[derive(Debug)]
-pub(crate) struct KeyInner {
+pub struct KeyInner {
     pub(crate) errors: Shared<Vec<Error>>,
     pub syntax: Option<SyntaxElement>,
     pub(crate) is_valid: bool,
@@ -480,7 +480,7 @@ pub enum StrRepr {
 }
 
 #[derive(Debug)]
-pub(crate) struct IntegerInner {
+pub struct IntegerInner {
     pub(crate) errors: Shared<Vec<Error>>,
     pub syntax: Option<SyntaxElement>,
     pub(crate) repr: IntegerRepr,
@@ -591,7 +591,7 @@ impl core::fmt::Display for IntegerValue {
 }
 
 #[derive(Debug)]
-pub(crate) struct FloatInner {
+pub struct FloatInner {
     pub(crate) errors: Shared<Vec<Error>>,
     pub syntax: Option<SyntaxElement>,
     pub(crate) value: OnceCell<f64>,
@@ -625,7 +625,7 @@ impl Float {
 }
 
 #[derive(Debug)]
-pub(crate) struct DateTimeInner {
+pub struct DateTimeInner {
     pub(crate) errors: Shared<Vec<Error>>,
     pub syntax: Option<SyntaxElement>,
     pub(crate) value: OnceCell<DateTimeValue>,
